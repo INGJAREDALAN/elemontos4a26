@@ -1,0 +1,34 @@
+name: flutter_application_1
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+  - assets/imagenes/anime1.jpg
+  - assets/imagenes/anime2.jpg
+  - assets/imagenes/anime3.jpg
+  - assets/imagenes/anime4.jpg
+  - assets/imagenes/anime5.jpg
+  - assets/imagenes/anime6.jpg
+
+  - assets/imagenes/skulgirl1.jpg
+  - assets/imagenes/skulgirl2.jpg
+  - assets/imagenes/skulgirl3.jpg
+  - assets/imagenes/skulgirl4.jpg
+  - assets/imagenes/skulgirl5.jpg
+  - assets/imagenes/skulgirl6.jpg
