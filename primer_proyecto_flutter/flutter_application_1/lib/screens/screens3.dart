@@ -12,14 +12,14 @@ class Screen3 extends StatelessWidget {
     'Power': 'assets/imagenes/anime6.jpg',
   };
 
-  final skullgirls = const [
-    'Filia',
-    'Fukua',
-    'Cerebela',
-    'Marie',
-    'Ms.Fortune',
-    'Parasoul',
-  ];
+  final Map<String, String> skulgirlss = const {
+    'Filia': 'assets/imagenes/skulgirl1.jpg',
+    'Fukua': 'assets/imagenes/skulgirl2.jpg',
+    'Cerebela': 'assets/imagenes/skulgirl3.jpg',
+    'Marie': 'assets/imagenes/skulgirl4.jpg',
+    'Ms..Fortune': 'assets/imagenes/skulgirl5.jpg',
+    'Parasoul': 'assets/imagenes/skulgirl6.jpg',
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -38,17 +38,16 @@ class Screen3 extends StatelessWidget {
           }),
 
           Divider(),
-          ...skullgirls.map(
-            (skulgirl) => ListTile(
-              leading: Icon(Icons.pets_rounded),
-              title: Text(skulgirl),
-              subtitle: Text('Una skulgirl muy guapa'),
-              trailing: Icon(Icons.arrow_forward),
-              tileColor: Color.fromARGB(115, 200, 208, 255),
-              iconColor: Color.fromARGB(300, 70, 320, 280),
-              textColor: Color.fromARGB(170, 24, 340, 125),
-            ),
-          ),
+
+          ...skulgirlss.entries.map((skulgirl) {
+            return _tileSkulgirls(
+              skulgirl.key,
+              skulgirl.value,
+              Colors.lightBlueAccent,
+              Colors.red,
+              Colors.white,
+            );
+          }),
         ],
       ),
     );
@@ -72,6 +71,27 @@ class Screen3 extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
     );
     final espacio = SizedBox(height: 10);
+    return Column(children: [tile, espacio]);
+  }
+
+  Widget _tileSkulgirls(
+    String skulgirlName,
+    String skulgirlImage,
+    Color tileColor,
+    Color iconColor,
+    Color textColor,
+  ) {
+    final tile = ListTile(
+      leading: Image.asset(skulgirlImage, width: 60, height: 60),
+      title: Text(skulgirlName),
+      subtitle: Text('Una skulgirl muy linda'),
+      trailing: Icon(Icons.arrow_forward),
+      tileColor: tileColor,
+      iconColor: iconColor,
+      textColor: textColor,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+    );
+    final espacio = SizedBox(height: 15);
     return Column(children: [tile, espacio]);
   }
 }
