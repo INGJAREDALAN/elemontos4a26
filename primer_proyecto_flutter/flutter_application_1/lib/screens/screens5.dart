@@ -13,6 +13,9 @@ class _Screens5State extends State<Screens5> {
   double _sliderValue = 0.0;
   TextEditingController _textController = TextEditingController();
   int radioSelected = 0;
+  bool _isChecked1 = false;
+  bool _isChecked2 = false;
+  bool _isChecked3 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +30,9 @@ class _Screens5State extends State<Screens5> {
           _entradaSwitch(),
           _entradaSlider(),
           _entradaRadio(),
+          _entradasCheck(),
+
+          ElevatedButton(onPressed: null, child: Text('Guardar Informacion')),
         ],
       ),
     );
@@ -35,7 +41,7 @@ class _Screens5State extends State<Screens5> {
   TextField _entradaTexto() {
     return TextField(
       controller: _textController,
-      obscureText: true,
+      obscureText: false,
       obscuringCharacter: '*',
       maxLength: 128,
       maxLines: 1,
@@ -71,11 +77,11 @@ class _Screens5State extends State<Screens5> {
   Column _entradaSlider() {
     return Column(
       children: [
-        Text('Indica que tanto te flutter: '),
+        Text('Indica que tanto te gusta trabajar con flutter: '),
         Slider(
           min: 0.0,
           max: 100.0,
-          activeColor: Colors.deepPurpleAccent,
+          activeColor: const Color.fromARGB(255, 77, 216, 255),
           thumbColor: Colors.white,
           value: _sliderValue,
           divisions: 10,
@@ -131,7 +137,7 @@ class _Screens5State extends State<Screens5> {
       leading: Transform.scale(
         scale: 1.5,
         child: Radio(
-          value: 2,
+          value: 3,
           groupValue: radioSelected,
           onChanged: (value) {
             setState(() {
@@ -151,5 +157,60 @@ class _Screens5State extends State<Screens5> {
         reactNative,
       ],
     );
+  }
+
+  Column _entradasCheck() {
+    final Text pregunta = Text('¿Que usas para correr tus apps');
+    final Row checks = Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        // Checkbox 1
+        Transform.scale(
+          scale: 1.5,
+          child: Checkbox(
+            value: _isChecked1,
+            onChanged: (value) {
+              setState(() {
+                _isChecked1 = value!;
+                print('Checkbox 1: $_isChecked1');
+              });
+            },
+          ),
+        ),
+        Text(' Emulador '),
+
+        //Check box 2
+        Transform.scale(
+          scale: 1.5,
+          child: Checkbox(
+            value: _isChecked2,
+            onChanged: (value) {
+              setState(() {
+                _isChecked2 = value!;
+                print('Checkbox 2: $_isChecked2');
+              });
+            },
+          ),
+        ),
+        Text(' Smartphone'),
+
+        //Check box 3
+        Transform.scale(
+          scale: 1.5,
+          child: Checkbox(
+            value: _isChecked3,
+            onChanged: (value) {
+              setState(() {
+                _isChecked3 = value!;
+                print('Checkbox 3: $_isChecked3');
+              });
+            },
+          ),
+        ),
+        Text(' Navegador Web '),
+      ],
+    );
+
+    return Column(children: [pregunta, checks]);
   }
 }
