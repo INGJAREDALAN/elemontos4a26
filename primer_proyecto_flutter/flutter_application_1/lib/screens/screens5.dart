@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/screens6.dart';
 
 class Screens5 extends StatefulWidget {
   const new({super.key});
@@ -32,7 +33,25 @@ class _Screens5State extends State<Screens5> {
           _entradaRadio(),
           _entradasCheck(),
 
-          ElevatedButton(onPressed: null, child: Text('Guardar Informacion')),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Screen6(
+                    nombre: _textController.text,
+                    gustaFlutter: _switchValue,
+                    nivelFlutter: _sliderValue,
+                    radioSelected: radioSelected,
+                    emulador: _isChecked1,
+                    smartphone: _isChecked2,
+                    navegadorWeb: _isChecked3,
+                  ),
+                ),
+              );
+            },
+            child: Text('Guardar Informacion'),
+          ),
         ],
       ),
     );

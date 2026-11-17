@@ -6,6 +6,11 @@ version: 0.1.0+1
 environment:
   sdk: ^3.13.5
 
+dependency_overrides:
+  flutter: 
+    sdk: flutter
+  google_fonts: ^9.0.0
+
 dependencies:
   flutter:
     sdk: flutter
@@ -32,3 +37,12 @@ flutter:
   - assets/imagenes/skulgirl4.jpg
   - assets/imagenes/skulgirl5.jpg
   - assets/imagenes/skulgirl6.jpg
+
+  fonts:
+  - family: ShareTech
+    fonts: 
+      - asset: assets/fonts/ShareTech-Regular.ttf
+        weight: 400
+
+
+

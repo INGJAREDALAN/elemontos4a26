@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_application_1/screens/screens1.dart';
+
+import 'package:flutter_application_1/theme/app_theme.dart';
 
 void main() {
   runApp(const MainApp());
@@ -13,6 +16,7 @@ class MainApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Proyecto 1',
+      // theme: AppTheme.lightTheme,
       home: Screen1(),
     );
   }
