@@ -99,7 +99,7 @@ class _Screens5State extends State<Screens5> {
         Text('Indica que tanto te gusta trabajar con flutter: '),
         Slider(
           min: 0.0,
-          max: 100.0,
+          max: 100,
           activeColor: const Color.fromARGB(255, 77, 216, 255),
           thumbColor: Colors.white,
           value: _sliderValue,
