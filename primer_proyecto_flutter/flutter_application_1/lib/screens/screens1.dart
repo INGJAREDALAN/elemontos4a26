@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_application_1/screens/screens2.dart';
+
 import 'package:flutter_application_1/screens/screens3.dart';
+
 import 'package:flutter_application_1/screens/screens4.dart';
+
 import 'package:flutter_application_1/screens/screens5.dart';
+
+import 'package:flutter_application_1/theme/app_theme.dart';
 
 class Screen1 extends StatelessWidget {
   const Screen1({super.key});
@@ -10,16 +16,19 @@ class Screen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Pantalla 1', style: TextStyle(color: Colors.white)),
-        backgroundColor: Colors.lightBlue,
-      ),
+      appBar: AppBar(title: const Text('Pantalla 1')),
       body: Container(
         color: Color.fromARGB(255, 176, 161, 203),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              Text(
+                'Selecciona una opcion:',
+                style: AppTheme.lightTheme.textTheme.headlineLarge,
+              ),
+
+              SizedBox(height: 20),
               boton('Ejemplo de Rows', Colors.green, context, Screen2()),
               SizedBox(height: 20),
               boton('Ejemplo de ListView', Colors.red, context, Screen3()),

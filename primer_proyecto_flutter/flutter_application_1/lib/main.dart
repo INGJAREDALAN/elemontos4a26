@@ -14,9 +14,9 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
       title: 'Proyecto 1',
-      theme: AppTheme.lightTheme,
       home: const Screen1(),
     );
   }
